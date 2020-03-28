@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,6 +54,9 @@ public class InfoFragment extends Fragment {
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         RecyclerView.ItemDecoration decoration = new DividerItemDecoration(24);
         recycler.addItemDecoration(decoration);
+        int resId = R.anim.layout_animation_fall_down;
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(), resId);
+        recycler.setLayoutAnimation(animation);
         RecyclerView.Adapter<RecyclerView.ViewHolder> adapter = new CommentAdapter(comments);
         recycler.setAdapter(adapter);
     }
