@@ -30,7 +30,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         final Comment comment = comments.get(position);
         final TextView result = holder.itemView.findViewById(R.id.result);
         String content = String.format(
-                "postId: %s \nid: %s \nname: %s \nemail: %s \ntext: %s \n\n",
+                "postId: %s \nid: %s \nname: %s \nemail: %s \ntext: %s",
                 comment.getId(), comment.getId(), comment.getName(),
                 comment.getEmail(), comment.getText()
         );

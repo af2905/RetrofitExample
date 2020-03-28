@@ -50,6 +50,8 @@ public class InfoFragment extends Fragment {
     private void addCommentsInRecycler(List<Comment> comments) {
         RecyclerView recycler = getActivity().findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        RecyclerView.ItemDecoration decoration = new DividerItemDecoration(24);
+        recycler.addItemDecoration(decoration);
         RecyclerView.Adapter<RecyclerView.ViewHolder> adapter = new CommentAdapter(comments);
         recycler.setAdapter(adapter);
     }
